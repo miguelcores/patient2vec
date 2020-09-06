@@ -17,7 +17,11 @@ from Common import save_object
 # genEmbeddings(input='_data/graph/hp-obo.edgelist', output='_data/emb/hp-obo_prueba.emb')
 class genEmbeddings():
     def __init__(self, input, output, weighted=False, p=1, q=.05, window_size=10, num_walks=10,
+<<<<<<< HEAD
                  walk_length=50, dimensions=128, directed=False, workers=8, iter=1):
+=======
+                 walk_length=5, dimensions=128, directed=False, workers=8, iter=1):
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
         self.input = input
         self.output = output
         self.weighted = weighted
@@ -59,11 +63,18 @@ class genEmbeddings():
         '''
         # walks = [map(str, walk) for walk in walks] #py2
         walks = [list(map(str, walk)) for walk in walks]
+<<<<<<< HEAD
         save_object(walks, './_data/walks/walks_hpo_orpha.pkl')
+=======
+        save_object(walks, './_data/walks/walks.pkl')
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
         model = Word2Vec(walks, size=self.dimensions, window=self.window_size, min_count=0, sg=1, workers=self.workers, iter=self.iter)
         # model.save_word2vec_format(args.output) #deprecated
         model.wv.save_word2vec_format(self.output)
 
         return
+<<<<<<< HEAD
 
 genEmbeddings(input='_data/graph/hp-obo-orpha.edgelist', output='_data/emb/hp-obo-orpha.emb')
+=======
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c

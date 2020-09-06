@@ -2,11 +2,16 @@ import os
 import numpy as np
 
 class HpoVecs():
+<<<<<<< HEAD
     def __init__(self, enriched, EXP_ID, exp_id): #filename='_data/emb/hp-obo.emb'
         if enriched == 'no':
             self.filename = '_data/emb/hp-obo_'+EXP_ID+'_'+exp_id+'.emb'
         else:
             self.filename = '_data/emb/hp-obo-orpha.emb'
+=======
+    def __init__(self, exp_id): #filename='_data/emb/hp-obo.emb'
+        self.filename = '_data/emb/hp-obo_'+exp_id+'.emb'
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
         self.vecs = self.__load_vectors(self.filename)
 
     def __load_vectors(self, fn):

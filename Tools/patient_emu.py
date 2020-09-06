@@ -6,15 +6,24 @@ from random import random, sample
 from Parsers import HpoParser, PhenotypeAnnotationsParser
 
 class PatientEmulator():
+<<<<<<< HEAD
     def __init__(self, conds=200, patients_per_cond=3, lamb=3, ancestor_prob=0.5, noise_ptg=0.5):
+=======
+    def __init__(self, count=3, lamb=3, ancestor_prob=0.5, noise_prob=0.5):
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
         self.hpos = HpoParser()
         self.anns = PhenotypeAnnotationsParser()
         self.eligibles = list(self.__build_eligibles(self.hpos, self.anns))
         self.ancestor_prob = ancestor_prob
         self.lamb = lamb
+<<<<<<< HEAD
         self.conds = conds
         self.patients_per_cond = patients_per_cond
         self.noise_prob = noise_ptg
+=======
+        self.count = count
+        self.noise_prob = noise_prob
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
 
     def __build_eligibles(self, hpos, anns):
         eligibles = anns.get_hpos()
@@ -107,7 +116,11 @@ class PatientEmulator():
                     'freqs': real['freqs'],
                     'sims': []
                 }
+<<<<<<< HEAD
             for n in range(self.patients_per_cond):
+=======
+            for n in range(self.count):
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
                 emul = self.emulate_condition(source, name, describe=describe)
                 unique_terms_in_phenotype = list(dict.fromkeys(emul['hpos']))
                 cond['sims'].append(unique_terms_in_phenotype)

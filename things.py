@@ -1,5 +1,6 @@
 from Common import utils
 
+<<<<<<< HEAD
 # translator = utils.load_object('./_data/hp-obo-translator.pkl')
 # # print(translator['id2name'])
 #
@@ -26,3 +27,13 @@ ROC_AUC_EXPERIMENT('orpha').plot_it()
 #
 # with open('_emu/emu-all-sample.json', 'w') as file:
 #     json.dump(orpha, file, indent=2)
+=======
+translator = utils.load_object('./_data/hp-obo-translator.pkl')
+# print(translator['id2name'])
+
+objeto = utils.load_object('./_data/walks/walks.pkl')
+
+for i in objeto:
+    if i[0] == '8317':
+        print([translator['id2name'][int(e)] for e in i])
+>>>>>>> 188da1ede0252aaddfb2c655d07e5a6fd96a961c
